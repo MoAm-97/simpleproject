@@ -18,7 +18,9 @@ pipeline {
         stage('Deploy') {
             steps {
 		echo "Deploy"
-            }
+		sh 'docker push "moam97/simple-project-server:latest" .'            
+
+}
         }
     }
 }
