@@ -12,6 +12,7 @@ pipeline {
             steps {
 		echo "Build"
 		sh 'mvn package -DskipTests'
+		sh 'docker build -t="moam97/simple-project-server:latest" .'
                 }
             }
         stage('Deploy') {
