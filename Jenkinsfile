@@ -32,6 +32,11 @@ pipeline {
                     }
                 }
                 stage('Production') {
+                        when{ 
+                            expression{
+                                emv.featurebranch3=="master"
+                            }
+                        }
                         steps {
                             echo "hello"
                         }
