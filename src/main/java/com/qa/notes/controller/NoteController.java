@@ -46,7 +46,7 @@ public class NoteController {
 	@RequestMapping(path = "note/", method = {RequestMethod.PUT})
 	@ResponseStatus(code = HttpStatus.OK)
 	public NoteDto updateNote(@RequestBody NoteDto note) throws NotFoundException{
-		return service.updateNote(note);
+	return service.updateNote(note);
 	}
 	
 	@RequestMapping(path = "note/{id}", method = {RequestMethod.DELETE})
