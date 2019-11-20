@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
     VERSION = readMavenPom().getVersion()
-}
+    }
     stages {
-                stage('version'){
+               /stage('version'){
                     steps{
                         echo "${VERSION}"
                     }
