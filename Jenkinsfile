@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    environment {
+    VERSION = readMavenPom().getVersion()
+}
     stages {
                 stage('Test Environment') {
                     steps {
@@ -27,6 +29,11 @@ pipeline {
                     }
                 }
                 stage('Staging') {
+                     when{ 
+                            expression{
+                                env.BRANCH_NAME=="master"
+                            }
+                        }
                     steps {
                         echo "hello"
                     }
