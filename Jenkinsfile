@@ -34,7 +34,7 @@ pipeline {
                 stage('Production') {
                         when{ 
                             expression{
-                                env.featurebranch3=="master"
+                                env.BRANCH_NAME=="master"
                             }
                         }
                         steps {
